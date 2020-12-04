@@ -2,18 +2,11 @@ import java.util.Scanner;
 import java.io.File;
 
 public class StringSearch {
-    private String s;
-    private String filename;
-
-    public StringSearch(String s, String filename){
-        this.s = s;
-        this.filename = filename;
-    }
 
     /** searching if a line in input file contains input string
      *  catches FileNotFound exception
      */
-    public void search(){
+    public void search(String s, String filename){
         File file = new File(filename);
         try {
             Scanner scan = new Scanner(file);
@@ -30,8 +23,8 @@ public class StringSearch {
     }
 
     public static void main(String[] args) {
-        StringSearch ss = new StringSearch(args[0], args[1]);
-        ss.search();
+        StringSearch ss = new StringSearch();
+        ss.search(args[0], args[1]);
     }
 
 }
